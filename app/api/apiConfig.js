@@ -1,3 +1,5 @@
+const cbApiBase = "https://api." + (__TESTNET__ ? "testnet." : "") + "crypto-bridge.org";
+
 export const blockTradesAPIs = {
     BASE: "https://api.blocktrades.us/v2",
     // BASE_OL: "https://api.blocktrades.us/ol/v2",
@@ -17,7 +19,7 @@ export const rudexAPIs = {
 };
 
 export const cryptoBridgeAPIs = {
-    BASE: "https://api." + (__TESTNET__ ? "testnet." : "") +"crypto-bridge.org/api/v1",
+    BASE: (__CB_BASE_URL__ || cbApiBase) + "/api/v1",
     COINS_LIST: "/coins",
     ACTIVE_WALLETS: "/wallets",
     MARKETS: "/markets",
@@ -114,7 +116,7 @@ const WSS_PROD_NODES = [
 export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: __TESTNET__ ? WSS_TEST_NODES : WSS_PROD_NODES,
-    DEFAULT_FAUCET: __TESTNET__ ? "https://api.testnet.crypto-bridge.org" : "https://api.crypto-bridge.org",
-    TESTNET_FAUCET: "https://api.testnet.crypto-bridge.org",
+    DEFAULT_FAUCET: __CB_BASE_URL__ || cbApiBase,
+    TESTNET_FAUCET: __CB_BASE_URL__ || cbApiBase,
     RPC_URL: "https://openledger.info/api/"
 };

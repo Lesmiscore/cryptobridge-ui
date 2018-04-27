@@ -27,6 +27,7 @@
     "profile-build": "cross-env NODE_ENV=production webpack --env.prod --env.profile --profile --json > stats-prod.json",
     "profile-nougly": "cross-env NODE_ENV=production webpack --env.prod --env.profile --env.noUgly --profile --json > stats-prod-nougly.json",
     "test": "echo TODO",
+    "dev": "cross-env NODE_ENV=development __TESTNET__=true __CB_BASE_URL__='http://localhost:3000' node server.js",
     "start": "cross-env NODE_ENV=development node server.js",
     "start-electron": "electron build/electron/index.js",
     "build": "cross-env NODE_ENV=production webpack --env.prod",
