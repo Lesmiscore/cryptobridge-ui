@@ -249,13 +249,11 @@ AccountDepositWithdraw = BindToChainState(AccountDepositWithdraw);
 class DepositStoreWrapper extends React.Component {
 
     componentWillMount() {
-        if (Apis.instance().chain_id.substr(0, 8) === "4018d784") { // Only fetch this when on BTS main net
-            GatewayActions.fetchCoins.defer({backer: "BRIDGE",
-                url: cryptoBridgeAPIs.BASE + cryptoBridgeAPIs.COINS_LIST,
-                walletUrl: cryptoBridgeAPIs.BASE + cryptoBridgeAPIs.ACTIVE_WALLETS,
-                tradingPairsUrl: cryptoBridgeAPIs.BASE
-            }); // Blocktrades
-        }
+        GatewayActions.fetchCoins.defer({backer: "BRIDGE",
+            url: cryptoBridgeAPIs.BASE + cryptoBridgeAPIs.COINS_LIST,
+            walletUrl: cryptoBridgeAPIs.BASE + cryptoBridgeAPIs.ACTIVE_WALLETS,
+            tradingPairsUrl: cryptoBridgeAPIs.BASE
+        }); // Blocktrades
     }
 
     render() {
