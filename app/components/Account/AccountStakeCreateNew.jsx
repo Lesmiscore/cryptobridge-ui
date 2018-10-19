@@ -101,7 +101,7 @@ class AccountStakeCreateNew extends React.Component {
     _checkFeeStatus(account = this.props.account) {
         if (!account) return;
 
-        const assets = ["1.3.0", this.state.asset.asset_id];
+        const assets = ["1.3.0"];
         let feeStatus = {};
         let p = [];
         assets.forEach(a => {
@@ -134,7 +134,7 @@ class AccountStakeCreateNew extends React.Component {
         if (!this.props.account) return null;
         checkFeeStatusAsync({
             accountID: this.props.account.get("id"),
-            feeID: this.state.asset.asset_id,
+            feeID: "1.3.0",
             type: "vesting_balance_create"
         }).then(({fee, hasBalance, hasPoolBalance}) => {
             this.setState(

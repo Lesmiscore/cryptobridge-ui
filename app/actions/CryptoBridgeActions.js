@@ -90,7 +90,7 @@ class CryptoBridgeActions {
         let tr = new TransactionBuilder();
 
         tr.add_type_operation("vesting_balance_create", {
-            fee: {amount: "0", asset_id: BCO_ASSET_ID},
+            fee: {amount: "0", asset_id: "1.3.0"},
             creator: account,
             owner: account,
             amount: {
