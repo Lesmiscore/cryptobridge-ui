@@ -283,8 +283,7 @@ class AccountStakeCreateNew extends React.Component {
         } = this.state;
 
         const fee = (feeAmount && feeAmount.getAmount({real: true})) || 0;
-        const reclaimFee =
-            ((feeAmount && feeAmount.getAmount({real: true})) || 0) * 2;
+        const reclaimFee = fee * 2;
         const currentBalance = this._getCurrentBalance();
         const amount = asset.getAmount({real: true});
 
